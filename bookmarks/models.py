@@ -92,8 +92,7 @@ class Bookmark(models.Model):
 
     @property
     def tag_names(self):
-        names = [tag.name for tag in self.tags.all()]
-        return sorted(names)
+        return [tag.name for tag in self.tags.all()]
 
     def save(self, *args, **kwargs):
         self.url_normalized = normalize_url(self.url)
