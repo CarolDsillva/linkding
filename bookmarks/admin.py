@@ -81,11 +81,7 @@ class LinkdingAdminSite(AdminSite):
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
-            path(
-                "tasks/",
-                self.admin_view(background_task_view),
-                name="background_tasks",
-            ),
+            path("tasks/", background_task_view, name="background_tasks"),
         ]
         return custom_urls + urls
 
